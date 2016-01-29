@@ -23,7 +23,8 @@ class MY_Controller extends CI_Controller {
 
 		$result = $this->Auth_model->selectAdminWhere($selectArray, $whereArray);
 		if($result === FALSE){
-			return FALSE;
+			redirect(base_url('auth'), 'refresh');
+			die();
 		}
 		else{
 			$array = array();

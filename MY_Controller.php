@@ -48,7 +48,7 @@ class MY_Controller extends CI_Controller {
 			}
 			else{
 				$this->lang->load('admin', $this->load->get_var('admin_default_lang'));
-				$this->session->userdata('success', $this->lang->line('redirect_start_module_success'));
+				$this->session->set_flashdata('success', $this->lang->line('redirect_start_module_success'));
 				redirect(base_url($this->load->get_var('admin_start_module')), 'refresh');
 				die();
 			}
